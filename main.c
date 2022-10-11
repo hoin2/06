@@ -2,21 +2,20 @@
 #include <stdlib.h>
 
 
-int print_star();
+int func1(void);
 
 int main(void) 
 {
-	print_star();
-	print_star();
-	print_star();
+	int x;
 
+	printf("main x is at %p\n",&x);
+	func(x);
+	
 	return 0;
 }
 
-int print_star()
+int func(int a)
 {
-	int i;
 	
-	for(i=0;i<10;i++)
-		printf("*");
+	printf("func x is at %p\n",&a);
 }
