@@ -1,18 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int square(int a)
+int get_integer()
 {
-	return(a*a);
+	int n;
+	printf("input two numbers:");
+	scanf("%d",&n);
+	return(n);
+}
+
+int combination(int n,int r)
+{
+	return (factorial(n)/(factorial(n-r)*factorial(r)));
+}
+
+int factorial(int j)
+{
+	int res=1;
+	int i;
+	
+	for(i=1;i<=j;i++)
+		res = res*i;
+	
+	return (res);
 }
 
 int main(void)
 {
-	int a=2;
+	int a,b;
+	int result;
 	
-	a=square(a);
+	a=get_integer();
+	b=get_integer();
 	
-	printf("a=%i\n",a);
+	result=combination(a,b);
+	
+	printf("%d",result);
 	
 	return 0;
 }
